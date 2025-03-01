@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Options Page :: Multiple Highlight</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <style type="text/css">
+    body {
+      background-color: #fff;
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 13px;
+      max-width: 80%;
+      margin: auto;
+    }
+    @media screen and (max-width: 600px)  {
+      body {
+        margin: 10px;
+        max-width: unset;
+      }
+    }
+    @supports (-moz-appearance:none) {
+      body {
+        margin: 15px;
+      }
+      button,
+      input[type=submit],
+      input[type=button] {
+        height: 24px;
+        color: rgb(68, 68, 68);
+        background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222, 222));
+        box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 2px inset;
+        text-shadow: rgb(240, 240, 240) 0 1px 0;
+        border: solid 1px rgba(0, 0, 0, 0.25);
+      }
+    }
+    td:first-child {
+      vertical-align: top;
+    }
+    ol {
+      margin: 0;
+      padding: 0 18px;
+      border-top: dashed 1px #ccc;
+      padding-top: 10px;
+    }
+    .colors {
+      table-layout: fixed;
+    }
+    .colors td:not(:first-child) {
+      text-align: center;
+    }
+    textarea {
+      margin-top: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+  </style>
+  <table width="100%">
+    <colgroup>
+      <col width="32">
+      <col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>Highlighting Engine <select id="engine">
+          <option value="mark.es6.js">Mark JS</option>
+          <option value="tbdm.es6.js">TBDM JS</option>
+        </select><p>On large HTML documents with intensive queries, use the new experimental TBMD engine (page refresh required)</p></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="persistent"></td>
+        <td><label for="persistent"> Keep highlights when closing the popup<sup>1</sup></label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="close-on-esc"></td>
+        <td><label for="close-on-esc"> Close the popup window when ESC is pressed<sup>2</sup></label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="clean-on-esc"></td>
+        <td><label for="clean-on-esc"> Clean the search box when ESC is pressed<sup>2</sup></label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="history-enabled"></td>
+        <td><label for="history-enabled"> Save the query for <select id="history-mode">
+          <option value="url">the current URL</option>
+          <option value="hostname">the current hostname</option>
+          <option value="global">any website</option>
+        </select> and automatically perform the search when the popup is opened</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="datalist-enabled"></td>
+        <td><label for="datalist-enabled"> If navigation is pressed, save the query for the current hostname (e.g.: www.google.com) and offer an autocompleting list of the previous queries for the same hostname</label></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="no-active-rule"></td>
+        <td><label for="no-active-rule"> Do not style active mark (I'll do my own in the custom style section) (page refresh required)</label></td>
+      </tr>
+    </tbody>
+  </table>
+  <table width="100%" class="colors">
+    <colgroup>
+      <col>
+      <col width="90px">
+      <col width="90px">
+      <col width="90px">
+    </colgroup>
+    <tr>
+      <td></td>
+      <td>Front</td>
+      <td>Background</td>
+      <td>Box</td>
+    </tr>
+    <tr id="a">
+      <td>Mark 1</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="b">
+      <td>Mark 2</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="c">
+      <td>Mark 3</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="d">
+      <td>Mark 4</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="e">
+      <td>Mark 5</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="f">
+      <td>Mark 6</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="g">
+      <td>Mark 7</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="h">
+      <td>Mark 8</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="i">
+      <td>Mark 9</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="j">
+      <td>Mark 10</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+    <tr id="_">
+      <td>Active Mark</td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+      <td><input type="color"></td>
+    </tr>
+  </table>
+  <textarea id="custom-css" rows=6 placeholder="Custom styles to overwrite default ones. To match active marker use 'mark[data-markjs=&quot;true&quot;][data-active=&quot;true&quot;]' and to match the first marker use '.mark00'"></textarea>
+
+  <div id="explore"></div>
+
+  <p>
+    <input type="button" id="support" value="Support Development">
+    <input type="button" id="reset" value="Factory Reset"> - <input type="button" id="save" value="Save">
+    <span id="toast"></span>
+  </p>
+
+  <ol>
+    <li>To keep highlights when closing the popup and use ESC key to close the popup window, you need to uncheck "Clean the search box when ESC is pressed" option.</li>
+    <li>This option may not work correctly on Firefox browser</li>
+  </ol>
+  <script type="text/javascript" src="/app.js/base.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" async src="matched.js"></script>
+</body>
+</html>
