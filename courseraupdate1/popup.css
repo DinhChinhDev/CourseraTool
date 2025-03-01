@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    min-width: 200px;
+  }
+  
+  #enable-button {
+    margin-top: 20px;
+  }
+  
+  .run-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #1F8354;
+    background-color: transparent;
+    color: #1F8354;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(31, 131, 84, 0.6);
+    transition: transform 0.2s ease;
+  }
+  
+  .run-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(31, 131, 84, 0.2) 20%, rgba(31, 131, 84, 0) 80%);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  

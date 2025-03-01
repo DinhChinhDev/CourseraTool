@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Mark ",
+    "version": "1.0",
+    "description": "Tự động tua video hoặc nhấn nút Mark as completed trên Coursera.",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.coursera.org/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
